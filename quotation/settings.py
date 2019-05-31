@@ -127,4 +127,3 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'api.UserProfile'
 
-APPEND_SLASH=False

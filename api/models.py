@@ -98,16 +98,15 @@ class DroidParts(models.Model):
         return self.contact_information
 
     def get_user_profile(self):
-        """Usado para obter um nome completo do usuário."""
+        """Usado para obter o usuário logado."""
 
         return self.user_profile
 
     def get_status(self):
-        """Usado para obter um nome completo do usuário."""
+        """Usado para obter o status da peça."""
 
         return self.status
 
     def get_created_on(self):
-        """Usado para obter um nome completo do usuário."""
 
         return self.created_on
