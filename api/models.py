@@ -79,6 +79,7 @@ class DroidParts(models.Model):
     address = models.CharField(max_length=255,help_text="Endereço completo")
     contact_information = models.CharField(max_length=255,help_text="Informações de contato")
     user_profile = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    # user = models.CharField(max_length=255, default=None)
     status = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
 
@@ -96,6 +97,11 @@ class DroidParts(models.Model):
         """Usado para obter a informação de contato do anunciante da peça do Droid."""
 
         return self.contact_information
+
+    # def get_user(self):
+    #     """Usado para obter o usuário logado."""
+
+    #     return self.user
 
     def get_user_profile(self):
         """Usado para obter o usuário logado."""

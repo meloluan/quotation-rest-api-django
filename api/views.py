@@ -30,10 +30,12 @@ class DroidPartsView(viewsets.ViewSet):
 
     def create(self, request):
         """Create a new hello message."""
-
+        request.data['user_profile'] = self.request.user
+        # print(request.data)
         serializer = serializers.DroidPartsSerializer(data=request.data)
 
         if serializer.is_valid():
+            print(self.request.user)
             serializer.save()
             return Response({'data': serializer.data}, status=201)
         else:
