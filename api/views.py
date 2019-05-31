@@ -30,8 +30,9 @@ class DroidPartsView(viewsets.ViewSet):
 
     def create(self, request):
         """Create a new hello message."""
-        request.data['user_profile'] = self.request.user
-        # print(request.data)
+        user_id = models.UserProfile.objects.get(email=self.request.user).pk
+        request.data['user_profile_id'] = user_id
+        print(request.data)
         serializer = serializers.DroidPartsSerializer(data=request.data)
 
         if serializer.is_valid():

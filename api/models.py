@@ -78,7 +78,7 @@ class DroidParts(models.Model):
     description = models.CharField(max_length=255,help_text="Descrição do produto")
     address = models.CharField(max_length=255,help_text="Endereço completo")
     contact_information = models.CharField(max_length=255,help_text="Informações de contato")
-    user_profile = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    user_profile_id= models.DecimalField(max_digits=8, decimal_places=0,default=None) #models.ForeignKey('UserProfile', on_delete=models.CASCADE, default=None)
     # user = models.CharField(max_length=255, default=None)
     status = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
